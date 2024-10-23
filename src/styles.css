@@ -1,0 +1,375 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #27ae60, #2c3e50);
+  color: #fff;
+  overflow: hidden; 
+}
+
+.app {
+  display: flex;
+  height: 100vh; 
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1c1c1c;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 10px;
+  
+}
+
+.sidebar ul li.active {
+  background-color: #1db954;
+}
+
+.sidebar ul li i {
+  margin: 10px;
+}
+
+.sidebar ul li:hover {
+  background-color: #333;
+}
+
+/* Sidebar */
+.sidebar h3 {
+  margin-bottom: 10px;
+  color: #fff; 
+}
+
+.sidebar h4 {
+  margin: 15px 0 5px;
+  color: #bbb; 
+}
+
+.sidebar input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1db954; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background-color: #1aa34a; 
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: #333;
+}
+
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: white;
+  padding: 20px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.header h1 {
+  font-size: 1.8em;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.search-input::placeholder {
+  color: #bbb;
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: #444;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  height: calc(100vh - 120px); 
+  overflow-y: auto; 
+}
+
+.main-content::-webkit-scrollbar {
+  display: none; /* Untuk browser berbasis WebKit */
+}
+
+.home h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.album-card {
+  background-color: #1c1c1c;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.album-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.album-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+/* CSS untuk ikon tambah */
+.album-card {
+  position: relative; 
+}
+
+.add-button {
+  background-color: transparent;
+  border: none;
+  color: #fff; 
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute; 
+  top: 10px;
+  right: 10px; 
+  opacity: 0; 
+  transition: opacity 0.3s; 
+}
+
+.album-card:hover .add-button {
+  opacity: 1; 
+  background-color: #1db954;
+  border-radius: 50%;
+}
+
+
+/* Menu penambahan */
+.add-to-menu {
+  background-color: #1c1c1c;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 40px; 
+  right: 0;
+  z-index: 10;
+}
+
+.add-to-menu button {
+  margin: 5px 0;
+  background-color: #1db954; 
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-menu button:hover {
+  background-color: #1aa34a; 
+}
+
+
+/* Player */
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #121212;
+  padding: 20px;
+  border-top: 1px solid #444;
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.player-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.player-cover {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin-right: 15px;
+  transition: transform 0.3s;
+}
+
+.player-cover:hover {
+  transform: scale(1.05);
+}
+
+.song-info {
+  text-align: left;
+}
+
+.song-title {
+  font-size: 1.2em;
+  margin: 0;
+  color: #ffffff;
+}
+
+.song-artist {
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.control-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.control-button:hover {
+  transform: scale(1.1);
+}
+
+.play-button {
+  color: #ff414b;
+}
+
+/* Playlist */
+.playlist {
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 8px;
+}
+
+.song-list {
+  list-style: none;
+  padding: 0;
+}
+
+.song-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.song-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.song-cover {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.song-details {
+  flex-grow: 1;
+}
+
+.song-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.song-artist {
+  color: #ccc;
+  margin: 0;
+}
+
+.song-duration {
+  color: #aaa;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+}
+
+.control-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.control-button:hover {
+  color: #1db954; 
+}
+
+.player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #282c34;
+  padding: 20px;
+  border-top: 1px solid #444;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
